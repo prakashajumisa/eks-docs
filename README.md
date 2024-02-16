@@ -7,7 +7,7 @@
 
 
 
-####0.1 eksctl 
+### 0.1 eksctl 
   To install or upgrade eksctl on Windows using Chocolatey
 
 Install the binaries with the following command.
@@ -30,7 +30,7 @@ Test that your installation was successful with the following command. You must 
   eksctl version
 ```
 
-####0.2 Kubectl
+#### 0.2 Kubectl
 To install kubectl on Windows you can use Chocolatey package manager
 
 ```
@@ -60,7 +60,7 @@ Configure kubectl to use a remote Kubernetes cluster:
 New-Item config -type file
 ```
 Note: Edit the config file with a text editor of your choice, such as Notepad. 
-####0.3 aws cli
+#### 0.3 aws cli
 **Install or update the AWS CLI**
 To update your current installation of AWS CLI on Windows, download a new installer each time you update to overwrite previous versions.
 
@@ -101,7 +101,7 @@ When creating an Amazon Elastic Kubernetes Service (EKS) cluster, you need to as
 
 **AmazonEKSCNIPolicy:** If you're using the Amazon VPC CNI (Container Network Interface) plugin for your EKS cluster, you need this role to allow Kubernetes to manage network interfaces in your VPC. This role provides permissions to create, describe, and delete network interfaces.
 
-###Create an Role with necessary policies
+### Create an Role with necessary policies
 
 **a. Create an Role via the CLI**
 
@@ -250,7 +250,7 @@ i. On the Select add-ons page, choose the add-ons that you want to add to your c
 j. On the Configure selected add-ons settings page, select the version that you want to install.
 ![Alt text](image-15.png)
 k. Then click create to you can create a cluster
-###List EKS Clusters
+### List EKS Clusters
 List the Amazon EKS clusters in your Amazon Web Services account in the specified Amazon Web Services Region by using the following command.
 
 ```
@@ -266,7 +266,7 @@ You can get the list of the clusters in your account like below
 }
 ```
 
-###Describe an EKS Cluster
+### Describe an EKS Cluster
   Describes an Amazon EKS cluster via aws cli by using the following command
   ```
   aws eks describe-cluster --name jumisa-demo --region=us-east-1
@@ -406,7 +406,7 @@ eksctl delete cluster --name jumisa-demo --region us-east-1
 2024-02-10 00:29:15 [✔]  all cluster resources were deleted
 ```
 
-###2.0 Node Group Management
+### 2.0 Node Group Management
 
  ### Create Node Group
  a. create an Node Group using eksctl
@@ -551,12 +551,12 @@ b. Delete the Node Group by using Console
 2. Open Compute > Node Groups > `your Node Group Name` >Click Delete Tap to delete the Node Group
 ![Alt text](image-23.png)
 
-###3.0 Configuring kubectl for EKS
+### 3.0 Configuring kubectl for EKS
 
 
 The `kubectl` command-line tool uses configuration information in `kubeconfig` files to communicate with the API server of a cluster
 
-###Update Kubeconfig for EKS Cluster
+### Update Kubeconfig for EKS Cluster
 Creating the the `Kubeconfig` file by using aws cli
 
 Replace `jumisa-demo` by your cluster name and replace `us-east-1` by your cluster region.
@@ -568,12 +568,12 @@ The output is
 ```
 Updated context jumisa-demo in /Users/prakash/.kube/config
 ```
-###Switch Kubectl Context to EKS Cluster
+### Switch Kubectl Context to EKS Cluster
 ```
 kubectl config use-context jumisa-demo-2
 ```
 
-###Check the Current Context
+### Check the Current Context
 
 ```
  kubectl config get-contexts
@@ -587,7 +587,7 @@ CURRENT   NAME                                                      CLUSTER     
 ```
 
 
-###4.0 IAM Integration with EKS
+### 4.0 IAM Integration with EKS
 
 EKS clusters use IAM users and roles to control access to the cluster. The rules are implemented in a config map called aws-auth. eksctl provides commands to read and edit this config map.
 
@@ -640,7 +640,7 @@ eksctl get iamidentitymapping --cluster <clusterName> --region=<region>
   ![Alt text](image-33.png)
 
 
-###5. Security and Access Control
+### 5. Security and Access Control
 
   **5.1** Enable Public and Private Access for EKS API Server
 
