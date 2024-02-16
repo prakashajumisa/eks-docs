@@ -1,5 +1,5 @@
 # EKS - Documentation
-###0.PreRequisites
+### 0.PreRequisites
 
 - **eksctl**    - A command line tool for working with EKS clusters that automates many individual tasks
 - **kubectl**   - A command line tool for working with Kubernetes clusters
